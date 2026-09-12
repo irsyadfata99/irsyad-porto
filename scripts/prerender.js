@@ -77,26 +77,28 @@ function renderCertificates() {
 }
 
 const staticHtml = `
-<div id="prerendered-content" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">
-  <h1>${esc(profile.name)}</h1>
-  <p>${esc(profile.role)} — ${esc(profile.location)}</p>
+<div id="prerendered-content" style="font-family:system-ui,sans-serif;background:#0D1117;color:#E6EDF3;padding:32px 20px;max-width:720px;margin:0 auto;line-height:1.6;">
+  <h1 style="color:#E6EDF3;">${esc(profile.name)}</h1>
+  <p style="color:#FF6B35;">${esc(profile.role)} — ${esc(profile.location)}</p>
   <p>${esc(profile.summary)}</p>
-  <p>Email: ${esc(profile.email)} | GitHub: ${esc(profile.github)} | LinkedIn: ${esc(profile.linkedin)}</p>
+  <p style="color:#8B95A1;">Email: ${esc(profile.email)} | GitHub: ${esc(profile.github)} | LinkedIn: ${esc(profile.linkedin)}</p>
 
-  <h2>Projects</h2>
+  <h2 style="color:#FF6B35;">Projects</h2>
   ${renderProjects()}
 
-  <h2>Experience</h2>
+  <h2 style="color:#FF6B35;">Experience</h2>
   ${renderExperience()}
 
-  <h2>Skills</h2>
+  <h2 style="color:#FF6B35;">Skills</h2>
   <ul>${renderStack()}</ul>
 
-  <h2>Education</h2>
+  <h2 style="color:#FF6B35;">Education</h2>
   <p>${esc(education.degree)} — ${esc(education.school)} (${esc(education.period)})</p>
 
-  <h2>Certificates</h2>
+  <h2 style="color:#FF6B35;">Certificates</h2>
   <ul>${renderCertificates()}</ul>
+
+  <p style="color:#8B95A1;font-size:13px;">Loading full experience…</p>
 </div>
 `.trim();
 
